@@ -10,30 +10,41 @@ public class Producto {
         this.precio = precio;
         this.ventas=0;
     }
+    public Producto(){
+
+    }
 
 
     //GETTERS Y SETTERS
 
 
-    public void setVentas(int ventas) {
-        this.ventas = this.ventas + ventas;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getPrecio() {
         return precio;
     }
 
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
     public int getVentas() {
         return ventas;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setVentas(int ventas) {
+        this.ventas = ventas;
     }
 
     @Override
     public String toString(){
-        return "Producto {nomre="+this.nombre+", precio="+this.precio+", ventas="+this.ventas+"}";
+        return "Producto {nombre="+this.nombre+", precio="+this.precio+", ventas="+this.ventas+"}";
     }
 
 }

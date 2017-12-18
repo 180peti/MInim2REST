@@ -19,6 +19,11 @@ public class Pedido {
 
     }
 
+    public Pedido(){
+        this.productos=new ArrayList<Producto>();
+        this.cantidades=new HashMap<String, Integer>();
+    }
+
 
     public void añadirProducto(Producto pr,int cantidad){
         if(productos.contains(pr)){
@@ -36,12 +41,33 @@ public class Pedido {
         return productos;
     }
 
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
     public HashMap<String, Integer> getCantidades() {
         return cantidades;
+    }
+
+    public void setCantidades(HashMap<String, Integer> cantidades) {
+        this.cantidades = cantidades;
     }
 
     public String getUsuario() {
         return usuario;
     }
 
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    @Override
+    public String toString(){
+        String cosas="Productos[";
+        for(Producto p:productos){
+            cosas=cosas+p.getNombre()+" "+cantidades.get(p.getNombre())+"\n";
+        }
+        cosas=cosas+"]";
+        return cosas;
+    }
 }

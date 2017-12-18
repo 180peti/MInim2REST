@@ -16,13 +16,12 @@ public class PMService {
 
     ProductManagerImpl test=ProductManagerImpl.getInstance();
 
-        @Path("/productos/precio")
+    @Path("/productos/precio")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Producto> productosPrecio(){
         //NO consigo que salga en el navegador la lista (me estaba fijando en "rest-example-lluis")
-        Lista converter=new Lista(test.productosPrecio());
-        return converter.getLista();
+            return test.productosPrecio();
     }
 
     @Path("/{user}/realizados")
